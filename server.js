@@ -4,14 +4,14 @@ server.use(express.json());
 
 server.use(logger);
 
-// const projectsRoute = require("./routes/projectsRoutes");
-// server.use("/projects", projectsRoute);
+const projectsRoute = require("./routes/projectsRoutes");
+server.use("/projects", projectsRoute);
 
-// const resourceRoute = require("./routes/resourceRoutes");
-// server.use("/resources", resourceRoute);
+const resourceRoute = require("./routes/resourceRoutes");
+server.use("/resources", resourceRoute);
 
-// const tasksRoute = require("./routes/tasksRoute");
-// server.use("/tasks", tasksRoute);
+const tasksRoute = require("./routes/tasksRoute");
+server.use("/tasks", tasksRoute);
 
 server.get("/", (req, res) => {
   res.send(`Working!`);
